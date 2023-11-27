@@ -1,22 +1,34 @@
-<div class="input-group">
-    <span class="input-group-text">Generar elemento</span>
-    <input [(ngModel)]="etiqueta" aria-label="Etiqueta" class="form-control" placeholder="Etiqueta">
-    <input [(ngModel)]="estilo" aria-label="Estilo" class="form-control" placeholder="Estilo: color:red;">
-    <button class="btn btn-success" type="button" (click)="generarElemento()">Generar Elemento</button>
-    <button class="btn btn-warning" type="button" id="Todo">Descargar</button>
-</div>
-<div>
-    <button class="btn btn-outline-primary" (click)="cargarArchivo()">Cargar Archivo CSS</button>
-</div>
-<div>
-    <textarea #areaTexto [(ngModel)]="estilosEditados" class="form-control" rows="10" id="documento"></textarea>
-</div>
 
-<div>
-    <button class="btn btn-outline-success" (click)="guardarCambios()">Guardar Cambios</button>
-</div>
+<button  class="pop btn btn-ligh" onclick="window.modal.showModal();">
+    <span class="icon">
+        <i class="fas fa-bars fa-lg"></i>
+    </span>
+</button>
 
-<section #container>
-    <!-- Contenedor para los elementos generados -->
-</section>
+<dialog id="modal">
+    <head>
+        <div>CSS-Dinamico</div>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" onclick="window.modal.close();"></button>
+    </head>
+    <hr>
+    <div>
+        <button class="btn btn-outline-primary" (click)="cargarArchivo()">Cargar Archivo CSS</button>
+    </div>
+    <div>
+        <textarea #areaTexto [(ngModel)]="estilosEditados" class="form-control" rows="10" id="documento"></textarea>
+    </div>
+    
+    <div>
+        <button class="btn btn-outline-success" (click)="guardarCambios()">Guardar Cambios</button>
+    </div>
+    
+    <section #container>
+        <!-- Contenedor para los elementos generados -->
+    </section>
+</dialog>
 
+<div [ngClass]="clases" [ngStyle]="estilosEditadosObj">
+    <table id="idTabla" class="tabla">
+        qwerty
+    </table>
+</div>  
